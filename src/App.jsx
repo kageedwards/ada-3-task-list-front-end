@@ -14,14 +14,26 @@ const TASKS = [
   },
 ];
 
+
 const App = () => {
+  const toggleTaskDone = (taskId) => {
+    const tasks = TASKS.map(task => {
+      if (TASKS.id === taskId) {
+        return {...task, isComplete: !task.isComplete };
+      } else {
+        return task;
+      }
+    });
+  };
+
+
   return (
     <div className="App">
       <header className="App-header">
         <h1>Ada&apos;s Task List</h1>
       </header>
       <main>
-        <div>{<TaskList tasks={TASKS} />}</div>
+        <div><TaskList tasks={TASKS} toggleTaskDone={toggleTaskDone}></TaskList></div>
       </main>
     </div>
   );
