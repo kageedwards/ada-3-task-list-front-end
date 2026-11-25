@@ -1,7 +1,5 @@
-import { useState } from "react";
-import PropTypes from "prop-types";
-
-import "./Task.css";
+import PropTypes from 'prop-types';
+import './Task.css';
 
 const Task = ({ id, title, isComplete, toggleTaskDone }) => {
   // const [complete, setComplete] = useState(isComplete);
