@@ -43,7 +43,7 @@ const App = () => {
       </header>
       <main>
         <div>
-          <TaskList tasks={tasks} toggleTaskDone={toggleTaskDone}></TaskList>
+          <TaskList tasks={tasks} toggleTaskDone={toggleTaskDone} deleteTask={deleteTask}></TaskList>
         </div>
       </main>
     </div>
