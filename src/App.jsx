@@ -19,14 +19,21 @@ const App = () => {
   const [tasks, setTasks] = useState(TASKS);
 
   const toggleTaskDone = (taskId) => {
-    const updatedTasks = tasks.map((task) => {
-      if (task.id === taskId) {
-        return { ...task, isComplete: !task.isComplete };
-      } else {
-        return task;
-      }
-    });
-    setTasks(updatedTasks);
+    setTasks((prevTasks) => 
+      prevTasks.map((task) => {
+        if (task.id === taskId) {
+          return { ...task, isComplete: !task.isComplete };
+        } else {
+          return task;
+        }
+      })
+    );
+  };
+
+  const deleteTask = (taskId) => {
+    setTasks((prevTasks) => 
+      prevTasks.filter((task) => task.id !== taskId)
+    );
   };
 
   return (
