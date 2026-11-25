@@ -1,8 +1,8 @@
 import PropTypes from 'prop-types';
-import Task from './Task.jsx';
-import './TaskList.css';
+import Task from ''./Task.jsx';
+import ''./TaskList.css';
 
-const TaskList = ({ tasks, toggleTaskDone }) => {
+const TaskList = ({ tasks, toggleTaskDone, deleteTask }) => {
   const getTaskListJSX = (tasks) => {
     return tasks.map((task) => {
       return (
@@ -12,11 +12,12 @@ const TaskList = ({ tasks, toggleTaskDone }) => {
           title={task.title}
           isComplete={task.isComplete}
           toggleTaskDone={toggleTaskDone}
+          deleteTask={deleteTask}
         />
       );
     });
   };
-  return <ul className="tasks__list no-bullet">{getTaskListJSX(tasks)}</ul>;
+  return <ul className='tasks__list no-bullet'>{getTaskListJSX(tasks)}</ul>;
 };
 
 TaskList.propTypes = {
@@ -25,9 +26,10 @@ TaskList.propTypes = {
       id: PropTypes.number.isRequired,
       title: PropTypes.string.isRequired,
       isComplete: PropTypes.bool.isRequired,
-    })
+    }),
   ).isRequired,
   toggleTaskDone: PropTypes.func.isRequired,
+  deleteTask: PropTypes.func.isRequired,
 };
 
 export default TaskList;
