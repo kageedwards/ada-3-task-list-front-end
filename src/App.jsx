@@ -1,6 +1,6 @@
-import TaskList from "./components/TaskList.jsx";
-import "./App.css";
-import { useState } from "react";
+import TaskList from './components/TaskList.jsx';
+import './App.css';
+import { useState } from 'react';
 
 const TASKS = [
   {
